@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/ak1394/react-native-tts/issues"
   },
-  "homepage": "https://github.com/ak1394/react-native-tts#readme"
+  "homepage": "https://github.com/ak1394/react-native-tts#readme",
+  "dependencies": {
+    "expo": "^52.0.44",
+    "react-native-tts": "^4.1.1"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "latest"
+  }
 }

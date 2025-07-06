@@ -1,8 +1,7 @@
 import { NativeModules, NativeEventEmitter, Platform } from 'react-native';
-
 const TextToSpeech = NativeModules.TextToSpeech;
 
-class Tts extends NativeEventEmitter {
+class TtsWrapper extends NativeEventEmitter {
   constructor() {
     super(TextToSpeech);
   }
@@ -77,7 +76,6 @@ class Tts extends NativeEventEmitter {
   }
 
   speak(utterance, options = {}) {
-    // compatibility with old-style voiceId argument passing
     if (typeof options === 'string') {
       if (Platform.OS === 'ios') {
         return TextToSpeech.speak(utterance, { iosVoiceId: options });
@@ -124,4 +122,4 @@ class Tts extends NativeEventEmitter {
   }
 }
 
-export default new Tts();
+export default new TtsWrapper();
